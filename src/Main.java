@@ -50,7 +50,7 @@ public class Main {
             return true;
         if (checkWinColumns(board))
             return true;
-        return checkWinDiagonal(board);
+        return (checkWinDiagonal(board));
     }
     public static boolean checkWinRows(Board board) {
         int[] arr = {0, 0};
@@ -61,11 +61,13 @@ public class Main {
                 int a = board.getPlayerInSquare(j, i);
                 if (a == 1) {
                    arr[0] ++;
+                    arr[1] = 0;
                    if (arr[0] == 4)
                        return true;
                 }
                 if (a == 2){
                     arr[1] ++;
+                    arr[0] = 0;
                     if (arr[1] == 4)
                         return true;
                 }
@@ -82,11 +84,13 @@ public class Main {
                 int a = board.getPlayerInSquare(i, j);
                 if (a == 1) {
                     arr[0] ++;
+                    arr[1] = 0;
                     if (arr[0] == 4)
                         return true;
                 }
                 if (a == 2){
                     arr[1] ++;
+                    arr[0] = 0;
                     if (arr[1] == 4)
                         return true;
                 }
@@ -95,17 +99,109 @@ public class Main {
         return false;
     }
     public static boolean checkWinDiagonal(Board board) {
-
+        int[] arr = {0, 0};
+        int j = 0;
+        for (int i = 1; i <= 7; i++) {
+                j++;
+                int a = board.getPlayerInSquare(i, j);
+                if (a == 1) {
+                    arr[0]++;
+                    arr[1] = 0;
+                }
+                if (a == 2) {
+                    arr[1]++;
+                    arr[0] = 0;
+                }
+                if (arr[0] == 4 || arr[1] == 4)
+                    return true;
+            }
+        j = 0;
+        arr[0] = 0;
+        arr[1] = 0;
+        for (int i = 7; i >= 1 ; i--) {
+            j++;
+            int a = board.getPlayerInSquare(i, j);
+            if (a == 1) {
+                arr[0]++;
+                arr[1] = 0;
+            }
+            if (a == 2) {
+                arr[1]++;
+                arr[0] = 0;
+            }
+            if (arr[0] == 4 || arr[1] == 4)
+                return true;
+        }
+        j = 0;
+        arr[0] = 0;
+        arr[1] = 0;
+        for (int i = 6; i >= 1 ; i--) {
+            j++;
+            int a = board.getPlayerInSquare(i, j);
+            if (a == 1) {
+                arr[0]++;
+                arr[1] = 0;
+            }
+            if (a == 2) {
+                arr[1]++;
+                arr[0] = 0;
+            }
+            if (arr[0] == 4 || arr[1] == 4)
+                return true;
+        }
+        j = 0;
+        arr[0] = 0;
+        arr[1] = 0;
+        for (int i = 1; i <= 6 ; i++) {
+            j++;
+            int a = board.getPlayerInSquare(i, j);
+            if (a == 1) {
+                arr[0]++;
+                arr[1] = 0;
+            }
+            if (a == 2) {
+                arr[1]++;
+                arr[0] = 0;
+            }
+            if (arr[0] == 4 || arr[1] == 4)
+                return true;
+        }
+        j = 0;
+        arr[0] = 0;
+        arr[1] = 0;
+        for (int i = 5; i >= 1 ; i--) {
+            j++;
+            int a = board.getPlayerInSquare(i, j);
+            if (a == 1) {
+                arr[0]++;
+                arr[1] = 0;
+            }
+            if (a == 2) {
+                arr[1]++;
+                arr[0] = 0;
+            }
+            if (arr[0] == 4 || arr[1] == 4)
+                return true;
+        }
+        j = 0;
+        arr[0] = 0;
+        arr[1] = 0;
+        for (int i = 1; i <= 5 ; i++) {
+            j++;
+            int a = board.getPlayerInSquare(i, j);
+            if (a == 1) {
+                arr[0]++;
+                arr[1] = 0;
+            }
+            if (a == 2) {
+                arr[1]++;
+                arr[0] = 0;
+            }
+            if (arr[0] == 4 || arr[1] == 4)
+                return true;
+        }
         return false;
     }
-
-
-
-
-
-
-
-
     //Method 1: Board board = new Board();
     //This method shows the initial empty board
 
