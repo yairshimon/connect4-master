@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
@@ -51,9 +50,7 @@ public class Main {
             return true;
         if (checkWinColumns(board))
             return true;
-        if (checkWinDiagonal(board))
-            return true;
-        return false;
+        return checkWinDiagonal(board);
     }
     public static boolean checkWinRows(Board board) {
         int[] arr = {0, 0};
