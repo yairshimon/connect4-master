@@ -63,7 +63,7 @@ public class Main {
             for (int j = 1; j <= 7; j++){
                 int a = board.getPlayerInSquare(j, i);
                 if (a == 1) {
-                   arr[0] = arr[0] + 1;
+                   arr[0] ++;
                    if (arr[0] == 4)
                        return true;
                 }
@@ -98,7 +98,7 @@ public class Main {
         return false;
     }
     public static boolean checkWinDiagonal(Board board) {
-        
+
         return false;
     }
 
